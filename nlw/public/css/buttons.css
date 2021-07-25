@@ -1,0 +1,122 @@
+/*Editando o button "primary-button" do arquivo "create-orphanage.html"*/
+.primary-button {
+    margin-top: 6.4rem;
+  
+    width: 100%;
+    height: 6.4rem;
+    border: 0;
+  
+    cursor: pointer;
+    background: #3cdc8c;
+  
+    border-radius: 2rem;
+    color: white;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    transition: background-color .2s;
+    text-decoration: none;
+  
+  }
+  .primary-button img {
+    margin-right: 1.6rem;
+  }
+  
+  
+  
+  .primary-button:hover {
+    background: #36cf82;
+}
+
+.button-select {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.button-select button {
+    height: 6.4rem;
+    background: #f5f8fa;
+    border: 1px solid #d3e2e5;
+    color: #5c8599;
+    cursor: pointer;
+}
+
+.button-select  button.active {
+    background: #edfff6;
+    border: 1px solid #a1e9c5;
+    color: #37c77f;
+
+}
+
+.button-select button:first-child {
+    border-radius: 2rem 0 0 2rem;
+}
+
+.button-select button:last-child {
+    border-radius: 0 2rem 2rem 0;
+}
+
+/*Editando botões adicionais ".button" e ".third-button" */
+.second-button {
+  margin-top: 6.4rem;
+
+  width: 100%;
+  height: 6.4rem;
+  border: 0;
+
+  cursor: pointer;
+  background: #f34c92;
+  border-radius: 2rem;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: background-color .2s;
+  text-decoration: none;
+
+}
+
+.second-button:hover {
+    background-color: #Ea1d77;
+}
+
+.second-button img {
+  width: 25px;
+  height: 25px;
+  margin-right: .6rem;
+}
+
+.third-button {
+  margin-top: 6.4rem;
+
+  width: 100%;
+  height: 6.4rem;
+  border: 0;
+
+  cursor: pointer;
+  background: #1e88e5;
+  border-radius: 2rem;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: background-color .2s;
+
+  text-decoration: none;
+}
+
+.third-button img{
+  width: 20px;
+  height: 20px;
+  margin-right: 0.6rem;
+}
+
+.third-button:hover {
+  background-color:#1565c0 ;
+}

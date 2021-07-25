@@ -1,0 +1,68 @@
+https://www.facebook.com/profile.php?id=100071043121557  ==> facebook
+https://www.instagram.com/index.html_css/  ==> instagram
+
+
+
+
+
+
+test.js
+const Database = require('./db');
+
+Database.then(async (db) => {
+    // Inserir Dados na tabela
+    await db.run(`
+        INSERT INTO orphanages (
+            lat,
+            lng,
+            name,
+            abour,
+            whatsapp,
+            images,
+            instructions,
+            opening_hours,
+            open_on_weekends
+        ) VALUES (
+            "-27.2226333",
+            "-49.6555874",
+            "Lar dos Meninos",
+            "Presta assistência a crianças de 06 a 15 anos em situação de riscos e/ou vulnerabilidade social.",
+            "981257463",
+            "https://images.unsplash.com/photo-1602389569471-5df5bde61968?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8aWR8fHx8fHwxNjI3MDU4MTAx&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
+            "Venha quando se sentir a vontade e traga muito amor e carinho para dar.",
+            "Horário de visitas Das 8h até 18h",
+            "0"
+        );
+    `)
+    // Consultar dados da tabela
+    const selectedOrphanages = await db.all("SELECT * FROM orphanages")
+    console.log(selectedOrphanages)
+})
+
+
+
+
+
+
+
+db.js
+const Database = require('sqlite-async');
+
+function execute (db) {
+    return db.exec(`
+        CREATE TABLE IF NOT EXISTS orphanages (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            lat TEXT,
+            lng TEXT,
+            name TEXT,
+            abour TEXT,
+            whatsapp TEXT,
+            images TEXT,
+            instructions TEXT,
+            opening_hours TEXT,
+            open_on_weekends TEXT
+        );
+    `)
+}
+
+module.exports = Database.open(__dirname + '/database.sqlite').then(execute)
